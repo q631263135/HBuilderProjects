@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			var myobj = {};
+
+			function interface() {
+				this.doX = function() {
+					console.log("x");
+				}
+			}
+			myobj.__proto__ = new interface(); // 通过new关键字构造出来的对象是obj，可以作为原型来使用
+
+			function myfunc() {
+				myobj.doX();
+			}
+
+//			function implement() {
+//				this.doX = function() {
+//					console.log("xxx");
+//				}
+//			}
+//			myobj.__proto__ = new implement();
+			myfunc();
+		</script>
+
+	</head>
+
+	<body>
+	</body>
+
+</html>

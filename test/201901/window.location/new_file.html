@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button onclick="myfunc()">click</button>
+		<script type="text/javascript">
+			function myfunc() {
+				window.location = "/test/window.location/subfolder" + "/test.html";
+//				window.location = "test/window.location/subfolder" + "/test.html"; // 访问地址为:http://127.0.0.1:8020/test/window.location/test/window.location/subfolder/test.html
+//				window.location = "/window.location/subfolder" + "/test.html"; // 访问地址为:http://127.0.0.1:8020/window.location/subfolder/test.html
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			function test() {
+				this.name = "ycz";
+			}
+			
+			test.prototype = {
+				say: function() {
+					console.log(this.name);
+				}
+			}
+			
+			// F12 -> CTRL+SHIFT+E -> 性能分析
+			
+			var s = new test();
+			
+			s.say();
+			s.say();
+			s.say();
+			s.say();
+			s.say();
+			s.say();
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

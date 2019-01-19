@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+			function Trade() {
+				
+				var flag = true;
+				
+				this.submitFunc = function() {
+//					console.log(this);
+					flag = false;
+					// new Trade();
+					console.lo
+				}
+				
+				this.retfunc = function() {
+					return this.submitFunc; 
+				}
+			}
+			
+			var trade = new Trade();
+			var tradeInWindow = trade.retfunc();
+			window.tradeInWindow();
+//			window.tradeInWindow();
+//			window.tradeInWindow();
+//			window.tradeInWindow();
+//			
+//			var trade2 = new Trade();
+//			var tradeInWindow2 = trade2.retfunc();
+//			tradeInWindow2();
+//			tradeInWindow2();
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

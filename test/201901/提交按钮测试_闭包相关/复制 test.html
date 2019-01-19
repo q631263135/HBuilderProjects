@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button id="btn">aaa</button>
+	</body>
+	
+	<script type="text/javascript">
+			
+		function Trade() {
+			
+			var flag = true;
+			
+			this.submitFunc = function() {
+				console.log("flag before change:" + flag);
+				flag = false;
+				console.log("flag after change:" + flag);
+			}
+			
+			this.retfunc = function() {
+				return this.submitFunc; 
+			}
+			
+			this.init = function() {
+				var tradeInner = new Trade();
+				document.getElementById("btn").onclick = this.submitFunc;
+			}
+		}
+		
+		var trade = new Trade();
+		trade.init();
+		
+//			var trade = new Trade();
+//			var tradeInWindow = trade.retfunc();
+//			window.tradeInWindow();
+//			window.tradeInWindow();
+//			
+//			var trade2 = new Trade();
+//			var tradeInWindow2 = trade2.retfunc();
+//			window.tradeInWindow2();
+
+		document.getElementById("btn").focus();
+	</script>
+</html>

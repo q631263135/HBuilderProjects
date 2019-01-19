@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			"user strict";
+			eval("var a = 'hello'; alert(a);"); // alert hello
+			
+			var a = "'hello'; alert(a);";
+			eval(a); // 'hello'; alert(a);
+			
+			
+			var o = {};
+			o.eval = eval;
+			
+			o.eval("alert('hello')");
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+//			var regExp = new RegExp("\\w+=\\w+(\?=&*)", "g");
+//			console.log(regExp.test("http://localhost:8080/myWebapp/mobileView/portal.jsp?id=31013&test=1"));
+//			console.log("http://localhost:8080/myWebapp/mobileView/portal.jsp?id=31013&test=1".match(regExp));
+
+			function getUrlParamVal(name) {
+				
+				var url = "http://localhost:8080/myWebapp/mobileView/portal.jsp?test1=中国&test2=china&test3=";
+				
+				var reg = new RegExp("(^|&|\\?)" + name + "=([^&]+)(&|$)", "i");
+				console.log(url.match(reg));
+				console.log(reg.exec(url))
+			}
+
+			getUrlParamVal("test1");
+		</script>
+	</head>
+
+	<body>
+	</body>
+
+</html>

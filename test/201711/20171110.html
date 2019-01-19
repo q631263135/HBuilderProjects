@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-2.0.3.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			function checkValueIfTrue(a) {
+				if (a) {
+					alert("[" + a + "]"+ "的值是" + true);
+				} else {
+					alert("[" + a + "]" + "的值是" + false);
+				}
+			}
+			checkValueIfTrue(undefined);
+			checkValueIfTrue(null);
+			checkValueIfTrue('');
+			checkValueIfTrue(' ');
+			checkValueIfTrue($.trim(' '));
+			checkValueIfTrue('undefined');
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

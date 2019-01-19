@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+			function Person(name) {
+				console.log(name);
+				this.name = name;
+			}
+			
+			function Author(name) {
+				
+				
+			}
+			
+			Author.prototype = Person;
+			
+			var au = new Author("ycz");
+			
+			console.log(au instanceof Function);
+			
+			au("haha");
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

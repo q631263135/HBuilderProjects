@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+			function Person(name) {
+				console.log(1);
+				this.name = name;
+			}
+			
+			function Author(name) {
+//				Person.call(this, name);
+				
+			}
+			
+			Author.prototype = new Person();
+			
+			var au = new Author("ycz");
+			
+			console.log(au instanceof Person);
+			
+//			au.apply(this); // "Uncaught TypeError: undefined is not a function"
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

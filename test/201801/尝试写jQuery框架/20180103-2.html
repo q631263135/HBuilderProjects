@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			(function(w) {
+				var jQuery = function(selector) {
+					return new jQuery.fn.init(selector);
+				}
+				
+				jQuery.fn = jQuery.prototype = {
+					constructor: jQuery,
+					init: function(selector) {
+						console.log(selector)
+					}
+				}
+				
+				jQuery.fn.init.prototype = jQuery.fn;
+				// init原来的protoype是一个对象，constructor是空函数；
+				// 该处赋值init其实就是jQuery自身，直面上看它俩的原型是同一个
+			})(window);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			function a() {
+				var n = 0;
+
+				function inc() {
+					console.log(this);
+					n++;
+					console.log(n);
+				}
+				return inc;
+			}
+			var c = a();
+			c(); //控制台输出1
+			c(); //控制台输出2
+		</script>
+	</head>
+
+	<body>
+	</body>
+
+</html>
