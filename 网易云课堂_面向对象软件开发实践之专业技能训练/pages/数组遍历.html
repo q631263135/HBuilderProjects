@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script>
+			function Person(name, age) {
+				this.name = name;
+				this.age = age;
+			}
+			var people = [];
+			for (var i = 0; i < 10; i++) {
+				people[people.length] = new Person("li" + i, Math.random());
+			}
+			
+			console.log(people);
+			people.forEach(function(value, index) {
+				console.log(value.name)
+			});
+			
+		</script>
+	</head>
+
+	<body>
+	</body>
+
+</html>

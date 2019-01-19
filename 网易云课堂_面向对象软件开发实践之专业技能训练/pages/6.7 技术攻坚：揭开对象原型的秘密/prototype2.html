@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			var MyFunction = function(info) {
+				this.info = info;
+			}
+			/**
+			 * 对MyFuction的猜测：就是个function，有prototype和__proto__
+			 */
+			
+			var myFunc = new MyFunction("haha");
+			/**
+			 * 对myFunc猜测：我猜它是个Object
+			 */
+			
+			
+			/**
+			 * 猜测验证：猜测正确；对myFunc来说，它是个MyFunction类型
+			 */
+			
+			
+			console.log(myFunc.__proto__);
+			
+			console.log(myFunc.__proto__ === MyFunction.prototype);
+			
+			console.log(myFunc.__proto__.constructor === MyFunction);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

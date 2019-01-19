@@ -1,0 +1,36 @@
+<!--
+	作者：631263135@qq.com
+	时间：2017-12-14
+	描述：下面是长期不写，导致忘记构造器咋写的啦
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			function Example() {
+				var info = "example function";
+				
+				function innerFunc1() {
+					console.info(this);
+				}
+				
+				function innerFunc2() {
+					console.info(this);
+					innerFunc1();
+				}
+			}
+			
+			var example = new Example();
+			console.log(example);
+			console.log(example.info);
+			
+			/**
+			 * 我感觉我整个人都蒙圈了
+			 */
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

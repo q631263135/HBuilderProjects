@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			Function.prototype.addMethod = function(name, func) {
+				if (!this.prototype[name]) {
+					this.prototype[name] = func;
+					return this;
+				}
+			}
+			var num = new Number(3);
+			
+			num.addMethod("integer", function() {
+				return Math[this < 0 ? "ceil" : "floor"](this);
+			});
+			
+			
+			console.info((10 / 3).integer());
+			
+		</script>
+	</head>
+
+	<body>
+	</body>
+
+</html>

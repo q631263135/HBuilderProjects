@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			var obj = {
+				info: "abc",
+			};
+			
+			/**
+			 * 原型，我们说打回原形，就是本来的面貌；原型呢？就是指，本来的类型，本来的样子，也是一个对象。
+			 * 小明的原型是个人，而不能说人是小明，所以原型还有个概念上顺序传递的关系，就像是继承。
+			 * 本例子，obj的原型是Object（不是函数），Object的原型向上没有传递了。
+			 * Object对象里有个构造器，用来生产对象。
+			 */
+			
+			console.log(obj.toString());
+			console.log(Object); // 这里是Object函数，Object有一个prototype属性，指向Object原型。
+			console.log(obj.__proto__ === Object.prototype);
+			
+			var obj2 = new Object();
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,23 @@
+
+<!--
+	作者：631263135@qq.com
+	时间：2017-11-30
+	描述：默认情况下，回调函数与被回调函数的执行上下文是同一个对象
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h2 id="time"></h2>
+		<script type="text/javascript">
+			function showTime() {
+				console.log(this);
+				document.getElementById("time").innerHTML = new Date().toLocaleString();
+			}
+			setInterval(showTime, 1000);
+		</script>
+	</body>
+</html>

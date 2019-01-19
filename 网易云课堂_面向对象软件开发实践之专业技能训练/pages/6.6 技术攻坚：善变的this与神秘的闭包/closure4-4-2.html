@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			function Example() {
+				this.info = "example function";
+				
+				this.innerFunc1 = function() {
+					console.info(this);
+				}
+				
+				this.innerFunc2 = function() {
+					console.info(this);
+					return this.innerFunc1;
+				}
+			}
+			var example = new Example();
+			example.innerFunc2();
+			
+//			var func = example.innerFunc2;
+//			func();
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h2 id="time"></h2>
+		<script type="text/javascript">
+			var func1 = function() {
+				var counter = 0;
+				
+				var innerFunc = function() {
+					console.log(this);
+					counter++;
+					console.log(counter);
+				}
+				
+				return innerFunc;
+			}
+			
+			for (var i = 0; i < 5; i++) {
+				func1()();
+				/**
+				 * 打印 5 个1
+				 * 在循环中，每次func1执行，都构造了一个上下文环境，counter=0
+				 */
+			}
+			
+			var func2 = func1();
+			/**
+			 * 2017-12-14 我对这一段的理解是：func1执行后，得到一个对象（上下文），也就是闭包
+			 * 而上面那个循环体内的，是得到5个对象
+			 * func2是挂载在window对象下面的，this指向window
+			 */
+			
+			/**
+			 * 构造了一个上下文，闭包中的counter初始化为0
+			 * 闭包执行都会访问该counter
+			 */
+			for (var j = 0; j < 5; j++) {
+				func2();
+			}
+			
+			
+			/**
+			 * 以面向对象方式看待此问题。
+			 * 首先func1对象中有counter和innerFunc
+			 * 
+			 */
+		</script>
+	</body>
+</html>

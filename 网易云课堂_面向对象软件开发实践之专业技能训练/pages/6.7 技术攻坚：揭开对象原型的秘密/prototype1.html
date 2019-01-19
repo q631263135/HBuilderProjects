@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			var func = function() {
+				console.log(func);
+			}
+			
+			function func2() {
+				console.log(func2);
+			}
+			
+			console.log(func.__proto__);
+			console.log(Function.prototype); // 这里只Function函数，函数的原型自然和func的原型是一样的啦
+			console.log(func.__proto__ === Function.prototype);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

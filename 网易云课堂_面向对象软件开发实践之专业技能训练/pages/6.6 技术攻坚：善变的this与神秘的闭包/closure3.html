@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			var func = function() {
+				console.log("我是func，我的序号是1");
+				this.func = function () {
+					console.log("我是func，我的序号是2");
+				}
+			}
+			/**
+			 * 这段程序和闭包没半点关系……
+			 */
+			
+			func();
+			func();
+			func();
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

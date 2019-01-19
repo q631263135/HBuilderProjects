@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			function abc() {
+				
+			}
+			
+			abc.__proto__.addMethod = function(name, func) {
+				if (!this.prototype[name]) {
+					this.prototype[name] = func;
+					return this;
+				}
+			}
+			
+			Number.addMethod("integer", function() {
+				return Math[this < 0 ? "ceil" : "floor"](this);
+			});
+			
+			
+			console.info((10 / 3).integer());
+			
+		</script>
+	</head>
+
+	<body>
+	</body>
+
+</html>

@@ -1,0 +1,39 @@
+
+<!--
+	作者：631263135@qq.com
+	时间：2017-11-30
+	描述：默认情况下，回调函数与被回调函数的执行上下文是同一个对象
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h2 id="time"></h2>
+		<script type="text/javascript">
+			var obj = {
+				showTime: function() {
+					console.log(this);
+					document.getElementById("time").innerHTML = new Date().toLocaleString();
+					return this.showTime2;
+				},
+				
+				showTime2: function() {
+					console.log(this);
+					document.getElementById("time").innerHTML = new Date().toLocaleString();
+				}
+				
+			}
+			
+			setInterval(obj.showTime(), 5000);
+			
+			/**
+			 * 运行结果：
+			 * 先执行obj.showTime()，打印"[object Object]"，只执行一次；
+			 * 而后把返回的函数showTime2作为参数传入到定时函数，每隔5秒执行一次
+			 */
+		</script>
+	</body>
+</html>

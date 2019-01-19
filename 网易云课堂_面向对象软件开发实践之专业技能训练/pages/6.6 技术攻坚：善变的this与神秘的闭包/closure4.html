@@ -1,0 +1,60 @@
+<!--
+	作者：631263135@qq.com
+	时间：2017-12-29
+	描述：此处注释在2017-12-29增写
+	我并没有看下面的理解，我先把理解写在此处，一会和下面的原先的理解进行对比。
+	1. 下面代码的意图是要求我指出this
+	2. example();执行只是返回一个函数而已；假设这个函数在执行
+	3. 返回的函数是挂在window下的，故第一个this是 Window；第二个this是上下文的，故是example
+	
+	
+	总结：第二个this也是Window，确实有一个上下文“example”，但这个上下文中的this确实谁发起调用，就指向了谁
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			var example = function() {
+				var counter = 0;
+				
+				var innerFunc1 = function() {
+					counter++;
+					console.info(this + " " + counter);
+				}
+				
+				var innerFunc2 = function() {
+					console.info(this);
+					innerFunc1();
+				}
+				
+				return innerFunc2;
+			}
+			
+			var ex = example();
+			for (var i = 0; i < 5; i++) {
+				ex();
+			}
+//			example()();
+			
+			
+			
+//			example.innerFunc1(); "Uncaught TypeError: undefined is not a function"
+//			example.innerFunc1 = function() {
+//				console.log("aaa");
+//			}
+			
+//			example();
+			/**
+			 * 在程序未执行时我的理解：
+			 * 首先func = example()后，innerFunc2挂载在window下，所以第一个this是Window
+			 * 关键是第二个this；
+			 * 我的理解是：func = example()执行后，有一个上下文对象就是example自身
+			 * 就像访问闭包里的变量一样，是只有一份，那这个函数是谁来调用起呢？
+			 */
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

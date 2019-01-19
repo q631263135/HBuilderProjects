@@ -1,0 +1,29 @@
+<!--
+	作者：631263135@qq.com
+	时间：2017-11-30
+	描述：可以通过Function的call、apply动态使用this
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.color = "blue";
+			
+			var obj = {
+				color: "red"
+			}
+			
+			function sayColor() {
+				console.log(this, this.color);
+			}
+			
+			sayColor();
+			
+			sayColor.call(obj);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

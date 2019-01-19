@@ -1,0 +1,28 @@
+
+<!--
+	作者：631263135@qq.com
+	时间：2017-11-30
+	描述：默认情况下，回调函数与被回调函数的执行上下文是同一个对象
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h2 id="time"></h2>
+		<script type="text/javascript">
+			var obj = {
+				showTime: function() {
+					console.log(this);
+					document.getElementById("time").innerHTML = new Date().toLocaleString();
+				}
+				
+			}
+			
+			setInterval(obj.showTime, 5000); // 不是谁调用指向谁吗？不是！这里this打印的是[object Window]
+			// obj.showTime是把obj的showTime函数作为参数传入，这里不是执行
+		</script>
+	</body>
+</html>

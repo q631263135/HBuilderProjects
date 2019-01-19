@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			Number.prototype.toFixed2 = function() {
+				return this.toFixed(2);
+			}
+			console.log(Number.prototype);
+			console.log((10.3).toFixed2());
+			
+			Object.prototype.selfDefMethod = function(methodName, func) {
+				if (Object.prototype[methodName] == undefined) {
+					Object.prototype[methodName] = func;
+				}
+			}
+			
+			var num = 10.3;
+			num.selfDefMethod("integer", function() {
+				return this.toFixed();
+			});
+			
+			console.log(num.integer());
+			
+			
+		</script>
+	</head>
+
+	<body>
+	</body>
+
+</html>

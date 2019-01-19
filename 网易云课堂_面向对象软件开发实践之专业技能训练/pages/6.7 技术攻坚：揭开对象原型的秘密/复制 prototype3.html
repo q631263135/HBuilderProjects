@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			function MyObject(info) {
+				this.info = info;
+			}
+			
+			var myObj = new MyObject("hehe");
+			for (var propName in myObj) {
+				console.log("myObj[" + propName + "]: " + myObj[propName]);
+			}
+			
+			MyObject.prototype.propertyX = 123;
+			
+			for (var propName in myObj) {
+				console.log("myObj[" + propName + "]: " + myObj[propName]);
+			}
+			
+			var obj = new Object();
+			obj.__proto__ = MyObject.prototype;
+			console.log(obj.prototype === myObj.prototype);
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

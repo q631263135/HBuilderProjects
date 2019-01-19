@@ -1,0 +1,43 @@
+<!--
+	作者：631263135@qq.com
+	时间：2017-11-30
+	描述：默认情况下，回调函数与被回调函数的执行上下文是同一个对象
+-->
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<h2 id="time"></h2>
+		<script type="text/javascript">
+			
+			function showTime2() {
+				console.log(this);
+				document.getElementById("time").innerHTML = new Date().toLocaleString();
+			}
+
+			var obj = {
+				showTime: function() {
+					console.log(this);
+					showTime2(); // 这里我理解本来应该这么些Window.showTime2(); 
+					// Java里，你想使用某个外部实例的方法，都不是要用.运算符吗
+					// 这段代码就像在一个类中一样，Window.省略了
+				},
+			}
+
+			setInterval(obj.showTime(), 5000);
+
+			/**
+			 * 运行结果：
+			 * setInterval只会执行一次
+			 * 
+			 * 第一次this是[object Object]，第二次是[object Window]
+			 */
+		</script>
+	</body>
+
+</html>

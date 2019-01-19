@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			var example = function() {
+				var info = "example function";
+				
+				var innerFunc1 = function() {
+					console.info(this);
+				}
+				
+				return {
+					do: function() {
+						console.info(this);
+						innerFunc1();
+					}
+				};
+			}
+			
+			example().do();
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

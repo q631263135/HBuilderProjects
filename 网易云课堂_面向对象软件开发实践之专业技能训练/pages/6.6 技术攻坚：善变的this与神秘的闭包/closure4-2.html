@@ -1,0 +1,31 @@
+<!--
+	作者：631263135@qq.com
+	时间：2017-12-14
+	描述：尼玛，这下面是什么鬼！
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			var example = {
+				info: "example",
+				
+				innerFunc1: function() {
+					console.info(this);
+				},
+				
+				innerFunc2: function() {
+					console.info(this);
+					innerFunc1(); // 你见过这种写法吗？
+				},
+			}
+			
+//			example.innerFunc2();closure4-1.html:16 Uncaught ReferenceError: innerFunc1 is not defined
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
