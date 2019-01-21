@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="root">
+			<div v-if="show">hahaha</div>
+			<input type="button" name="toggle" id="toggle" value="toggle" @click="handleClick" />
+			<ul>
+				<li v-for="item of list" :key="item">{{item}}</li>
+			</ul>
+		</div>
+		
+		<script type="text/javascript">
+			new Vue({
+				el: "#root",
+				data: {
+					show: true,
+					list: [1, 2, '杨超政', '苍井空']
+				},
+				methods: {
+					handleClick: function() {
+						this.show = !this.show;
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

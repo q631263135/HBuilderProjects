@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div id="root" v-text="msg"></div>
+		<p id="p1" v-html="content" v-on:click="handlerClick"></p>
+	</body>
+
+	<script type="text/javascript">
+		new Vue({
+			el: "#root",
+			data: {
+				msg: "Hello Vue.js"
+			}
+		})
+
+		new Vue({
+			el: "#p1",
+			data: {
+				content: "<p>你好，vue</p>"
+			},
+			methods: {
+				handlerClick: function() {
+					console.log(this);
+					this.content = "我很好";
+				}
+			}
+		})
+	</script>
+
+</html>

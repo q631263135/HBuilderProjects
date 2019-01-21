@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="root">
+			<input type="text" v-model="input_val" />
+			<button @click="handleClick">submit</button>
+			<!--<ul>
+				<li v-for="(item, index) of list" :key="index">{{item}}</li>
+			</ul>-->
+			
+			<ul>
+				<todo_list 
+					v-for="(item, index) of list" 
+					:key="index"
+					:content="item"
+					>
+				</todo_list>
+			</ul>
+			
+		</div>
+	</body>
+	
+	<script type="text/javascript">
+		
+		Vue.component("todo_list", {
+			props: ['content'],
+			template: "<li>{{content}}</li>"
+		})
+		
+		new Vue({
+			el: "#root",
+			data: {
+				input_val: "",
+				list: []
+			},
+			methods: {
+				handleClick: function() {
+					this.list.push(this.input_val);
+					this.input_val = "";
+				}
+			}
+		})
+	</script>
+</html>

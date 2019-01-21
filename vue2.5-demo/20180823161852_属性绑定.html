@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="root" v-if="true" v-bind:title="'杨超政，' + this.title">hello</div>
+	</body>
+	<script type="text/javascript">
+		new Vue({
+			el: "#root",
+			data: {
+				title: "你好"
+			}
+		});
+	</script>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div id="root"></div>
+	</body>
+
+	<script type="text/javascript">
+		
+		new Vue({
+			el: "#root",
+			template: "<p>模板写在vue实例中也可以打印{{msg}}</p>",
+			data: {
+				msg: "Hello Vue.js"
+			}
+		})
+	</script>
+
+</html>
