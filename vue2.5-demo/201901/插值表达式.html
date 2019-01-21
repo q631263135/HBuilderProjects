@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/common.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div id="mount">
+			<p id="today" v-on:click="alertToday()">{{today}}</p>
+			<p id="week" v-text="week" @click="alertWeek()"></p>
+			<!--
+            	作者：631263135@qq.com
+            	时间：2019-01-21
+            	描述：我发现绑定属性也可以用事件，会触发一次事件执行哟，如下：
+            	<p id="week" v-text="week" :click="alertWeek()"></p>
+            -->
+            <p id="mystate" v-if="showMyState" v-html="state"></p>
+            <ul v-show="showMyState">
+            	<!--
+                	作者：631263135@qq.com
+                	时间：2019-01-21
+                	描述：vue对标签的处理是由内而外的，试着在ul中增加v-text="111"
+                -->
+            	<li style="list-style-type: circle;" v-for="goal of goals">{{goal}}</li>
+            </ul>
+		</div>
+	</body>
+
+	<script type="text/javascript">
+		new Vue({
+			el: "#mount",
+			data: {
+				today: new Date().format("yyyy年MM月dd日"),
+				week: new Date().getDay() + 1,
+				state: "<strong>今天我很开心！</strong>",
+				showMyState: false,
+				goals: ['保身心', '勇猛进', '常有恒', '戒多言', '戒喜怒']
+			},
+			methods: {
+				alertToday: function() {
+					alert("今天是" + this.today);
+				},
+				alertWeek: function() {
+					alert("今天星期" + this.week);
+					this.showMyState = !(this.showMyState);
+				}
+			}
+
+		});
+	</script>
+
+</html>

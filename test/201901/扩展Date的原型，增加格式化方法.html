@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			var today = new Date();
+			console.log(today);
+			
+			// 月份要加1
+//			console.log("今天是" + today.getFullYear() + "年" + today.getMonth() + "月" + today.getDate() + "日");
+//			console.log("今天是" + today.getFullYear() + "年" + (today.getMonth() + 1) + "月" + today.getDate() + "日");
+			
+			var fmt = "yyyy-MM-dd hh:ss:mm";
+			var regExp_y = /(y+)/g;
+			var regExp_M = /(M+)/g;
+			var regExp_d = /(d+)/g;
+			var regExp_h = /(h+)/g;
+			var regExp_s = /(s+)/g;
+			var regExp_m = /(m+)/g;
+			
+			// 这里的RegExp是全局对象
+//			console.log(RegExp.$1); // ""
+			console.log(regExp_y.test(fmt)); // true
+//			console.log(RegExp.$1); // yyyy
+			
+			fmt = fmt.replace(RegExp.$1, today.getFullYear());
+			console.log(fmt);
+			
+			
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
