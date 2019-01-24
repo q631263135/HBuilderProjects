@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button id="btn1">btn1</button>
+		<button id="btn2">btn2</button>
+	</body>
+	<script type="text/javascript">
+		var i = 0;
+		
+		var fns = [];
+		
+		for (var i = 0; i < 5; i++) { // 把var换成let，我的理解是let把变量锁定在最内层使用的函数作用域
+			fns[i] = function() {
+				alert(i);
+			}
+		}
+		
+		fns[0]();
+	</script>
+</html>

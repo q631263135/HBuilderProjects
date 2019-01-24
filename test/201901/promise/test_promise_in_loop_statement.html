@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			let promiseArr = [];
+			
+			for (let i = 1; i < 4; i++) {
+				promiseArr[i] = new Promise((resolve, reject) => {
+					setTimeout(() => {
+						resolve(i);
+					}, i * 10000)
+				});
+			}
+			
+			for (let i = 1; i < 4; i++) {
+				promiseArr[i].then(function(idx) {
+					console.log(`我是第${idx}个`);
+				})
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
